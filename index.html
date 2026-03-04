@@ -1,84 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TIMELOOP // OS_INIT</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMELOOP // OS_INIT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
-  <div class="os-overlay"></div>
+    <header class="sys-header">
+        <div class="sys-logo">TIMELOOP.OS</div>
+        <nav class="sys-nav">
+            <a href="index.html" class="nav-link active">Entry</a>
+            <a href="store.html" class="nav-link">Active_Directory</a>
+        </nav>
+    </header>
 
-  <header class="sys-header">
-    <div class="sys-logo">TIMELOOP.OS_INIT</div>
-    <nav class="sys-nav">
-      <a href="index.html" class="nav-link active">Entry</a>
-      <a href="store.html" class="nav-link">Active_Directory</a>
-    </nav>
-  </header>
-
-  <main class="os-container">
-    <section class="os-terminal-view">
-      <div class="os-terminal-window">
-        <div class="os-term-header">
-          <span class="os-term-dot red"></span>
-          <span class="os-term-dot yellow"></span>
-          <span class="os-term-dot green"></span>
-          <span class="os-term-title">TIMELOOP SECURE_UPLINK</span>
-        </div>
-        <div class="os-term-body">
-          <p class="term-log">>> INITIALIZING_SESSION...</p>
-          <p class="term-log">>> AUTHENTICATING_ACCESS_KEY: 'ST_005'...</p>
-          <p class="term-log green">>> ACCESS_GRANTED.</p>
-          <p class="term-log">>> DOWNLOADING_LATEST_ARCHIVE_DATA...</p>
-          <h1 class="term-main-title">AUTHORIZED ARCHIVE ACCESS</h1>
-          <p class="term-desc">Welcome to the shop!</p>
-          <div class="term-action-area">
-            <a href="store.html" class="sys-btn term-link">Initialize Directory Access</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="sys-footer">
-    <p>SECURE TERMINAL VERSION: 7.1.4 // TIMELOOP THRILL CORP</p>
-  </footer>
-
-  <style>
-    .os-container { margin-top: 70px; min-height: calc(100vh - 70px); display: flex; align-items: center; justify-content: center; padding: 5%; }
-    
-    .os-terminal-window {
-      width: 100%; max-width: 900px;
-      background: var(--bg-panel);
-      border: 1px solid var(--cyan-dim);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 10px var(--cyan-glow);
-      animation: flicker 0.2s infinite ease-out alternate;
-    }
-
-    .os-term-header {
-      height: 35px; background: #111; border-bottom: 1px solid #222;
-      display: flex; align-items: center; padding: 0 15px; gap: 8px;
-    }
-
-    .os-term-dot { width: 12px; height: 12px; border-radius: 50%; opacity: 0.6; }
-    .os-term-dot.red { background: #ff5f57; }
-    .os-term-dot.yellow { background: #febc2e; }
-    .os-term-dot.green { background: #28c840; }
-    .os-term-title { color: #555; font-size: 0.75rem; margin-left: 10px; text-transform: uppercase; }
-
-    .os-term-body { padding: 40px; }
-    .term-log { margin: 5px 0; font-size: 0.8rem; color: #555; }
-    .term-log.green { color: var(--neon-cyan); font-weight: bold; }
-    .term-main-title { font-size: 2.2rem; color: #fff; margin: 30px 0 15px 0; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; }
-    .term-desc { color: #999; margin-bottom: 40px; max-width: 600px; }
-    .term-action-area { margin-top: 50px; }
-    .term-link { font-size: 0.9rem; padding: 15px 30px; }
-  </style>
+    <main class="os-container">
+        <section class="os-terminal-window">
+            <div class="os-term-body">
+                <p class="term-log green">>> CONNECTION_STABLE.</p>
+                <h1 class="term-main-title">AUTHORIZED ARCHIVE ACCESS</h1>
+                <p class="term-desc">Welcome to the shop!</p>
+                <div class="term-action-area">
+                    <a href="store.html" class="sys-btn">Open Active Directory</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
 </body>
 </html>
