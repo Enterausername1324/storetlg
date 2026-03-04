@@ -1,176 +1,156 @@
 /* =========================================
-   TIMELOOP THRILL OS - GLOBAL DESIGN SYSTEM
+   TIMELOOP THRILL - SYSTEM CORE CSS
    ========================================= */
 
 :root {
-  /* System Colors */
-  --neon-cyan: #00ffcc;
-  --cyan-dim: rgba(0, 255, 204, 0.3);
-  --cyan-glow: rgba(0, 255, 204, 0.15);
-  
-  /* Interface Colors */
-  --bg-dark: #050505;
-  --bg-panel: #0a0a0a;
-  --bg-hex: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMDQiPjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMFYwek00MCA0MGg0MHY0MEg0MFY0MHpNODAgMGg0MHY0MEg4MFYwek0wIDgwaDQwdjQwSDBWODB6Ii8+PC9nPjwvc3ZnPg==');
-
-  /* Typography */
-  --font-stack: 'SF Mono', 'Fira Code', 'Courier New', monospace;
-  --text-main: #e0e0e0;
-  --text-muted: #666;
-
-  /* UI Animation */
-  --ease: cubic-bezier(0.23, 1, 0.32, 1);
-  --transition: all 0.4s var(--ease);
+    --neon-cyan: #00ffcc;
+    --cyan-dim: rgba(0, 255, 204, 0.2);
+    --bg-dark: #050505;
+    --bg-panel: #0a0a0a;
+    --font-main: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    --transition: all 0.3s ease;
 }
 
-/* Base Terminal Overrides */
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-  background-color: var(--bg-dark);
-  background-image: var(--bg-hex);
-  color: var(--text-main);
-  font-family: var(--font-stack);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-dark);
+    /* Subtle Grid Background */
+    background-image: 
+        linear-gradient(var(--cyan-dim) 1px, transparent 1px),
+        linear-gradient(90deg, var(--cyan-dim) 1px, transparent 1px);
+    background-size: 50px 50px;
+    color: #ffffff;
+    font-family: var(--font-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
 }
 
-/* Global Animations */
-@keyframes flicker {
-  0% { opacity: 0.95; }
-  50% { opacity: 1; }
-  100% { opacity: 0.98; }
-}
-
-@keyframes scanline {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100vh); }
-}
-
-/* Main Terminal Scanline Overlay */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 2px;
-  background: rgba(0, 255, 204, 0.03);
-  animation: scanline 8s linear infinite;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-/* System Header (Global Nav) */
+/* --- HEADER --- */
 .sys-header {
-  position: fixed;
-  top: 0; width: 100%; height: 70px;
-  background: rgba(10, 10, 10, 0.85);
-  backdrop-filter: blur(10px); /* Glassmorphism */
-  border-bottom: 1px solid var(--cyan-dim);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 5%;
-  z-index: 100;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--cyan-dim);
+    position: fixed;
+    top: 0;
+    z-index: 100;
 }
 
 .sys-logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 4px;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 10px var(--neon-cyan);
-  text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
 }
 
 .sys-nav {
-  display: flex; gap: 30px;
+    display: flex;
+    gap: 25px;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  transition: var(--transition);
-  position: relative;
-  letter-spacing: 1px;
+    text-decoration: none;
+    color: #666;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: var(--transition);
 }
 
 .nav-link:hover, .nav-link.active {
-  color: var(--neon-cyan);
-  text-shadow: 0 0 8px var(--neon-cyan);
+    color: var(--neon-cyan);
 }
 
-.nav-link.active::after {
-  content: ""; position: absolute;
-  bottom: -5px; left: 0; width: 100%; height: 1px;
-  background: var(--neon-cyan);
-}
-
-/* UI Elements & Controls */
-.sys-btn {
-  background: transparent;
-  border: 1px solid var(--neon-cyan);
-  color: var(--neon-cyan);
-  padding: 12px 24px;
-  font-family: var(--font-stack);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: 0 0 5px var(--cyan-glow);
-}
-
-.sys-btn:hover {
-  background: var(--neon-cyan);
-  color: #000;
-  box-shadow: 0 0 20px var(--neon-cyan);
-}
-
-/* Footer (System Status) */
-.sys-footer {
-  width: 100%;
-  padding: 40px 5%;
-  text-align: center;
-  border-top: 1px solid #1a1a1a;
-  color: #333;
-  font-size: 0.75rem;
-  margin-top: auto;
-}
-/* Center the Terminal on the Landing Page */
+/* --- THE CENTERING ENGINE --- */
 .os-container {
+    flex: 1; /* Spans the space between header and footer */
     display: flex;
-    align-items: center;      /* Vertical Center */
-    justify-content: center;   /* Horizontal Center */
-    min-height: 100vh;        /* Full viewport height */
-    padding: 20px;
-    box-sizing: border-box;
+    align-items: center;      /* Vertically Center */
+    justify-content: center;   /* Horizontally Center */
+    padding: 100px 20px;       /* Padding to avoid header/footer overlap */
 }
 
-/* Ensure the terminal window doesn't look too stretched */
+/* --- TERMINAL WINDOW --- */
 .os-terminal-window {
     width: 100%;
-    max-width: 850px;         /* Perfect "readable" width */
-    margin: 0 auto;           /* Safety center */
+    max-width: 750px;
     background: var(--bg-panel);
     border: 1px solid var(--cyan-dim);
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 30px 100px rgba(0,0,0,0.8), 0 0 20px var(--cyan-glow);
-    animation: flicker 0.15s infinite ease-out alternate;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 255, 204, 0.1);
+    text-align: center; /* Centers all text content */
 }
 
-/* Adjust the internal padding for a "Premium" feel */
-.os-term-body {
-    padding: 60px;            /* More breathing room inside the window */
-    text-align: center;       /* Centers the text inside the terminal */
-}
-
-.term-action-area {
-    margin-top: 40px;
+.os-term-header {
+    background: #111;
+    padding: 12px 20px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #222;
 }
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.red { background: #ff5f57; }
+.yellow { background: #febc2e; }
+.green { background: #28c840; }
+
+.os-term-title {
+    flex: 1;
+    font-size: 0.7rem;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.os-term-body {
+    padding: 60px 40px;
+}
+
+.term-log {
+    font-size: 0.8rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.term-log.cyan {
+    color: var(--neon-cyan);
+}
+
+.term-main-title {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.term-desc {
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-size: 0.9rem;
+}
+
+/* --- ACTION BUTTON --- */
+.sys-btn
