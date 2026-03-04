@@ -1,133 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TIMELOOP // ACTIVE_DIRECTORY</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMELOOP // ACTIVE_DIRECTORY</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
-  <header class="sys-header">
-    <div class="sys-logo">TIMELOOP.OS_INIT</div>
-    <nav class="sys-nav">
-      <a href="index.html" class="nav-link">Entry</a>
-      <a href="store.html" class="nav-link active">Active_Directory</a>
-    </nav>
-  </header>
-
-  <main class="os-container store-view">
-    <header class="store-dir-header">
-      <p class="dir-path">Root > Public_Archive > Data_Packages</p>
-      <h1 class="dir-title">Active Data Directory</h1>
-      <p class="dir-meta">Found: 3 Packages // Showing: 1-3 // Last_Sync: 14:02Z</p>
+    <header class="sys-header">
+        <div class="sys-logo">TIMELOOP.OS</div>
+        <nav class="sys-nav">
+            <a href="index.html" class="nav-link">Entry</a>
+            <a href="store.html" class="nav-link active">Active_Directory</a>
+        </nav>
     </header>
 
-    <div class="product-listing">
-      <article class="data-package">
-        <div class="pkg-header">
-          <span class="pkg-id">PKG_001A</span>
-          <span class="pkg-clearance green"> CL-1 // ALPHA</span>
+    <main class="os-container store-view">
+        <header class="store-dir-header">
+            <p class="dir-path">Root > Public_Archive > Data_Packages</p>
+            <h1 class="dir-title">Active Data Directory</h1>
+        </header>
+
+        <div class="product-listing">
+            <article class="data-package">
+                <div class="pkg-header">
+                    <span class="pkg-id">PKG_001A</span>
+                    <span class="pkg-clearance green">CL-1 // ALPHA</span>
+                </div>
+                <div class="pkg-body">
+                    <h2 class="pkg-title">Spice-bound</h2>
+                    <p class="pkg-desc">Full terminal clearance for all restricted directory files.</p>
+                </div>
+                <div class="pkg-footer">
+                    <span class="pkg-price">$19.99</span>
+                    <button class="sys-btn">Purchase_License</button>
+                </div>
+            </article>
         </div>
-        <div class="pkg-body">
-          <h2 class="pkg-title">Archive Access Key</h2>
-          <p class="pkg-desc">Full terminal clearance for all restricted and hidden directory files. Guaranteed lifetime protocol updates.</p>
-        </div>
-        <div class="pkg-footer">
-          <span class="pkg-price">$19.99</span>
-          <button class="sys-btn pkg-action">Inquire_Access</button>
-        </div>
-      </article>
-
-      <article class="data-package premium">
-        <div class="pkg-header">
-          <span class="pkg-id">PKG_002B</span>
-          <span class="pkg-clearance orange"> CL-2 // BETA</span>
-        </div>
-        <div class="pkg-body">
-          <h2 class="pkg-title">Custom Automation Scripts</h2>
-          <p class="pkg-desc">Personalized, sector-specific scripting tailored for maximum efficiency on your infrastructure. Consulting session included.</p>
-        </div>
-        <div class="pkg-footer">
-          <span class="pkg-price">$49.99</span>
-          <button class="sys-btn pkg-action solid">Inquire_Access</button>
-        </div>
-      </article>
-
-      <article class="data-package">
-        <div class="pkg-header">
-          <span class="pkg-id">PKG_003G</span>
-          <span class="pkg-clearance green"> CL-1 // GAMMA</span>
-        </div>
-        <div class="pkg-body">
-          <h2 class="pkg-title">Priority Tech Support Uplink</h2>
-          <p class="pkg-desc">Direct terminal uplink to our senior technical archivists for prioritized assistance and protocol resolution.</p>
-        </div>
-        <div class="pkg-footer">
-          <span class="pkg-price">$9.99/mo</span>
-          <button class="sys-btn pkg-action">Inquire_Access</button>
-        </div>
-      </article>
-    </div>
-  </main>
-
-  <footer class="sys-footer">
-    <p>TIMELOOP THRILL CORP // ACTIVE_DIRECTORY TERMINAL VERSION: 7.1.4</p>
-  </footer>
-
-  <style>
-    .os-container.store-view { margin-top: 70px; padding: 80px 5%; display: block; }
-    
-    .store-dir-header { margin-bottom: 60px; text-align: left; }
-    .dir-path { color: #444; font-size: 0.8rem; margin: 0; }
-    .dir-title { font-size: 2.2rem; color: #fff; margin: 10px 0; text-transform: uppercase; letter-spacing: 2px; }
-    .dir-meta { color: #666; font-size: 0.8rem; }
-
-    /* The Advanced Product Grid */
-    .product-listing {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-
-    .data-package {
-      background: var(--bg-panel);
-      border: 1px solid #222;
-      border-radius: 4px;
-      padding: 30px;
-      display: flex; flex-direction: column;
-      transition: var(--transition);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      position: relative;
-    }
-
-    .data-package:hover {
-      border-color: var(--neon-cyan);
-      box-shadow: 0 0 20px var(--cyan-glow), 0 20px 50px rgba(0,0,0,0.5);
-      transform: translateY(-5px);
-    }
-
-    .data-package.premium {
-      border-color: #febc2e;
-      box-shadow: 0 0 10px rgba(254, 188, 46, 0.1);
-    }
-
-    .pkg-header { display: flex; justify-content: space-between; font-size: 0.7rem; color: #555; }
-    .pkg-clearance { font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
-    .pkg-clearance.green { color: var(--neon-cyan); }
-    .pkg-clearance.orange { color: #febc2e; }
-
-    .pkg-body { margin-top: 30px; flex-grow: 1; }
-    .pkg-title { color: #fff; text-transform: uppercase; font-size: 1.4rem; letter-spacing: 1px; margin: 0 0 15px 0; }
-    .pkg-desc { color: #999; font-size: 0.85rem; }
-
-    .pkg-footer { margin-top: 40px; display: flex; align-items: center; justify-content: space-between; }
-    .pkg-price { font-size: 1.6rem; color: #fff; font-weight: bold; }
-    .pkg-action { font-size: 0.8rem; padding: 12px 20px; }
-    .pkg-action.solid { background: #febc2e; color: #000; border-color: #febc2e; }
-    .pkg-action.solid:hover { background: #fff; color: #000; border-color: #fff; box-shadow: 0 0 15px #fff; }
-  </style>
+    </main>
 
 </body>
 </html>
