@@ -140,3 +140,37 @@ body::after {
   font-size: 0.75rem;
   margin-top: auto;
 }
+/* Center the Terminal on the Landing Page */
+.os-container {
+    display: flex;
+    align-items: center;      /* Vertical Center */
+    justify-content: center;   /* Horizontal Center */
+    min-height: 100vh;        /* Full viewport height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Ensure the terminal window doesn't look too stretched */
+.os-terminal-window {
+    width: 100%;
+    max-width: 850px;         /* Perfect "readable" width */
+    margin: 0 auto;           /* Safety center */
+    background: var(--bg-panel);
+    border: 1px solid var(--cyan-dim);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 30px 100px rgba(0,0,0,0.8), 0 0 20px var(--cyan-glow);
+    animation: flicker 0.15s infinite ease-out alternate;
+}
+
+/* Adjust the internal padding for a "Premium" feel */
+.os-term-body {
+    padding: 60px;            /* More breathing room inside the window */
+    text-align: center;       /* Centers the text inside the terminal */
+}
+
+.term-action-area {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
