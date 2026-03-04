@@ -1,133 +1,142 @@
-/* Branding Variables */
+/* =========================================
+   TIMELOOP THRILL OS - GLOBAL DESIGN SYSTEM
+   ========================================= */
+
 :root {
-    --neon-cyan: #00ffcc;
-    --dark-bg: #0a0a0a;
-    --box-bg: #161616;
-    --text-main: #ffffff;
-    --text-dim: #888888;
+  /* System Colors */
+  --neon-cyan: #00ffcc;
+  --cyan-dim: rgba(0, 255, 204, 0.3);
+  --cyan-glow: rgba(0, 255, 204, 0.15);
+  
+  /* Interface Colors */
+  --bg-dark: #050505;
+  --bg-panel: #0a0a0a;
+  --bg-hex: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsPSIjMDAwMDAwIiBmaWxsLW9wYWNpdHk9IjAuMDQiPjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMFYwek00MCA0MGg0MHY0MEg0MFY0MHpNODAgMGg0MHY0MEg4MFYwek0wIDgwaDQwdjQwSDBWODB6Ii8+PC9nPjwvc3ZnPg==');
+
+  /* Typography */
+  --font-stack: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  --text-main: #e0e0e0;
+  --text-muted: #666;
+
+  /* UI Animation */
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --transition: all 0.4s var(--ease);
 }
 
-/* Base Styles */
+/* Base Terminal Overrides */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
 body {
-    background-color: var(--dark-bg);
-    color: var(--text-main);
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
+  background-color: var(--bg-dark);
+  background-image: var(--bg-hex);
+  color: var(--text-main);
+  font-family: var(--font-stack);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Header Section */
-header {
-    width: 100%;
-    padding: 40px 0;
-    text-align: center;
-    border-bottom: 2px solid var(--neon-cyan);
-    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
-    background: rgba(0, 0, 0, 0.8);
+/* Global Animations */
+@keyframes flicker {
+  0% { opacity: 0.95; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
 }
 
-.logo {
-    font-size: 2.5rem;
-    letter-spacing: 5px;
-    color: var(--neon-cyan);
-    text-shadow: 0 0 10px var(--neon-cyan);
-    margin: 0;
+@keyframes scanline {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
 }
 
-.tagline {
-    color: var(--text-dim);
-    font-size: 0.9rem;
+/* Main Terminal Scanline Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 2px;
+  background: rgba(0, 255, 204, 0.03);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 1000;
 }
 
-/* Layout Container */
-.container {
-    max-width: 1000px;
-    width: 90%;
-    padding: 50px 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+/* System Header (Global Nav) */
+.sys-header {
+  position: fixed;
+  top: 0; width: 100%; height: 70px;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px); /* Glassmorphism */
+  border-bottom: 1px solid var(--cyan-dim);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5%;
+  z-index: 100;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
-/* Product Cards */
-.product-card {
-    background: var(--box-bg);
-    border: 1px solid #333;
-    padding: 25px;
-    transition: 0.3s ease;
-    box-shadow: 5px 5px 0px rgba(0, 255, 204, 0.1);
+.sys-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+  text-transform: uppercase;
 }
 
-.product-card:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: 0 0 25px rgba(0, 255, 204, 0.3);
-    transform: translateY(-5px);
+.sys-nav {
+  display: flex; gap: 30px;
 }
 
-.product-card h3 {
-    color: var(--neon-cyan);
-    margin: 10px 0;
-    text-transform: uppercase;
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+  position: relative;
+  letter-spacing: 1px;
 }
 
-.status-tag {
-    font-size: 0.7rem;
-    color: var(--text-dim);
-    letter-spacing: 1px;
+.nav-link:hover, .nav-link.active {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
 }
 
-.price {
-    font-size: 1.6rem;
-    color: #fff;
-    margin: 20px 0;
-    font-weight: bold;
+.nav-link.active::after {
+  content: ""; position: absolute;
+  bottom: -5px; left: 0; width: 100%; height: 1px;
+  background: var(--neon-cyan);
 }
 
-/* Buttons */
-.buy-btn {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background: var(--neon-cyan);
-    color: #000;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: none;
-    box-sizing: border-box;
+/* UI Elements & Controls */
+.sys-btn {
+  background: transparent;
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  padding: 12px 24px;
+  font-family: var(--font-stack);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 0 5px var(--cyan-glow);
 }
 
-.buy-btn:hover {
-    background: #ffffff;
-    box-shadow: 0 0 15px #ffffff;
+.sys-btn:hover {
+  background: var(--neon-cyan);
+  color: #000;
+  box-shadow: 0 0 20px var(--neon-cyan);
 }
 
-/* Footer */
-footer {
-    margin-top: auto;
-    padding: 40px;
-    text-align: center;
-}
-
-footer p {
-    color: #444;
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-.footer-link {
-    color: var(--neon-cyan);
-    text-decoration: none;
-    font-size: 0.8rem;
-    border: 1px solid var(--neon-cyan);
-    padding: 5px 10px;
-}
-
-.footer-link:hover {
-    background: var(--neon-cyan);
-    color: #000;
+/* Footer (System Status) */
+.sys-footer {
+  width: 100%;
+  padding: 40px 5%;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
+  color: #333;
+  font-size: 0.75rem;
+  margin-top: auto;
 }
