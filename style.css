@@ -1,0 +1,133 @@
+/* Branding Variables */
+:root {
+    --neon-cyan: #00ffcc;
+    --dark-bg: #0a0a0a;
+    --box-bg: #161616;
+    --text-main: #ffffff;
+    --text-dim: #888888;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+    margin: 0;
+}
+
+.tagline {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+/* Layout Container */
+.container {
+    max-width: 1000px;
+    width: 90%;
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Product Cards */
+.product-card {
+    background: var(--box-bg);
+    border: 1px solid #333;
+    padding: 25px;
+    transition: 0.3s ease;
+    box-shadow: 5px 5px 0px rgba(0, 255, 204, 0.1);
+}
+
+.product-card:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.3);
+    transform: translateY(-5px);
+}
+
+.product-card h3 {
+    color: var(--neon-cyan);
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.status-tag {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.price {
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* Buttons */
+.buy-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: var(--neon-cyan);
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    box-sizing: border-box;
+}
+
+.buy-btn:hover {
+    background: #ffffff;
+    box-shadow: 0 0 15px #ffffff;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 40px;
+    text-align: center;
+}
+
+footer p {
+    color: #444;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-size: 0.8rem;
+    border: 1px solid var(--neon-cyan);
+    padding: 5px 10px;
+}
+
+.footer-link:hover {
+    background: var(--neon-cyan);
+    color: #000;
+}
