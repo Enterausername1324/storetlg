@@ -4,120 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIMELOOP | ARCHIVE STORE</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        :root {
-            --neon-cyan: #00ffcc;
-            --dark-bg: #0a0a0a;
-            --box-bg: #161616;
-        }
-
-        body {
-            background-color: var(--dark-bg);
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* Animated Header */
-        header {
-            width: 100%;
-            padding: 40px 0;
-            text-align: center;
-            border-bottom: 2px solid var(--neon-cyan);
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
-            background: rgba(0, 0, 0, 0.8);
-        }
-
-        .logo {
-            font-size: 2.5rem;
-            letter-spacing: 5px;
-            color: var(--neon-cyan);
-            text-shadow: 0 0 10px var(--neon-cyan);
-            margin: 0;
-        }
-
-        /* Product Grid */
-        .container {
-            max-width: 1000px;
-            width: 90%;
-            padding: 50px 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        /* Cyber Product Card */
-        .product-card {
-            background: var(--box-bg);
-            border: 1px solid #333;
-            padding: 20px;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-card:hover {
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 25px rgba(0, 255, 204, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .product-card h3 {
-            color: var(--neon-cyan);
-            margin-top: 0;
-            text-transform: uppercase;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            color: #fff;
-            margin: 15px 0;
-        }
-
-        .buy-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background: var(--neon-cyan);
-            color: #000;
-            text-decoration: none;
-            text-align: center;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-        }
-
-        .buy-btn:hover {
-            background: #fff;
-            box-shadow: 0 0 15px #fff;
-        }
-
-        .status-tag {
-            font-size: 0.7rem;
-            color: #888;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 20px;
-            color: #444;
-            font-size: 0.8rem;
-        }
-    </style>
 </head>
 <body>
 
     <header>
         <h1 class="logo">TIMELOOP_STORE</h1>
-        <p style="color: #888;">AUTHORIZED ACCESS ONLY // SECTOR 7G</p>
+        <p class="tagline">AUTHORIZED ACCESS ONLY // SECTOR 7G</p>
     </header>
 
     <div class="container">
@@ -129,4 +23,27 @@
             <a href="#" class="buy-btn">Inquire Access</a>
         </div>
 
-        <div class
+        <div class="product-card">
+            <span class="status-tag">[ HARDWARE_ID: BETA ]</span>
+            <h3>Custom Scripting</h3>
+            <p>Personalized automation scripts tailored for your infrastructure.</p>
+            <div class="price">$49.99</div>
+            <a href="#" class="buy-btn">Inquire Access</a>
+        </div>
+
+        <div class="product-card">
+            <span class="status-tag">[ RESOURCE_TYPE: GAMMA ]</span>
+            <h3>Priority Support</h3>
+            <p>Direct terminal uplink to our senior technical archivists.</p>
+            <div class="price">$9.99/mo</div>
+            <a href="#" class="buy-btn">Inquire Access</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TIMELOOP THRILL CORP. ALL RIGHTS RESERVED.</p>
+        <a href="https://timeloopthrill.com" class="footer-link">Return to Main Terminal</a>
+    </footer>
+
+</body>
+</html>
