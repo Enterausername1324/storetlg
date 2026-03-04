@@ -1,51 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TIMELOOP // OS_INIT</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMELOOP // OS_INIT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
-  <header class="sys-header">
-    <div class="sys-logo">TIMELOOP.OS</div>
-    <nav class="sys-nav">
-      <a href="index.html" class="nav-link active">Entry</a>
-      <a href="store.html" class="nav-link">Active_Directory</a>
-    </nav>
-  </header>
+    <header class="sys-header">
+        <div class="sys-logo">TIMELOOP.OS</div>
+        <nav class="sys-nav">
+            <a href="index.html" class="nav-link active">Entry</a>
+            <a href="store.html" class="nav-link">Active_Directory</a>
+        </nav>
+    </header>
 
-  <main class="os-container">
-    <div class="os-terminal-window">
-      <div class="os-term-header">
-        <span class="os-term-dot red"></span>
-        <span class="os-term-dot yellow"></span>
-        <span class="os-term-dot green"></span>
-        <span class="os-term-title">SECURE_UPLINK // SESSION: 0x9FF2</span>
-      </div>
-      <div class="os-term-body">
-        <p class="term-log green">>> ENCRYPTION_STABLE</p>
-        <p class="term-log">>> AUTHENTICATING ARCHIVIST...</p>
-        
-        <h1 class="term-main-title">AUTHORIZED ARCHIVE ACCESS</h1>
-        <p class="term-desc">Welcome to the central distribution hub. All data packages are encrypted with 256-bit Timeloop protocols. Proceed to the directory to view available sector files.</p>
-        
-        <div class="term-action-area">
-          <a href="store.html" class="sys-btn">Initialize Directory Access</a>
+    <main class="os-container">
+        <div class="os-terminal-window">
+            
+            <div class="os-term-header">
+                <div class="dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="os-term-title">SECURE_UPLINK // TIMELOOP_ARCHIVE</div>
+            </div>
+
+            <div class="os-term-body">
+                <p class="term-log cyan">>> AUTHENTICATION_SUCCESSFUL</p>
+                
+                <h1 class="term-main-title">AUTHORIZED ARCHIVE ACCESS</h1>
+                
+                <p class="term-desc">
+                    Accessing centralized distribution sectors. All protocol downloads 
+                    are currently monitored via the Timeloop mainframe. 
+                    Please proceed to the directory to view available data packages.
+                </p>
+
+                <div class="term-action-area">
+                    <a href="store.html" class="sys-btn">Initialize Directory</a>
+                </div>
+
+                <p class="term-log" style="margin-top: 40px; opacity: 0.2;">
+                    STATION_ID: TL_ARC_09 // 256-BIT_ENCRYPTION_ACTIVE
+                </p>
+            </div>
+
         </div>
-        
-        <p class="term-log" style="margin-top: 30px; opacity: 0.3; font-size: 0.7rem;">
-            WARNING: UNAUTHORIZED DOWNLOADS WILL BE TRACED.
-        </p>
-      </div>
-    </div>
-  </main>
+    </main>
 
-  <footer class="sys-footer">
-    <p>TIMELOOP THRILL CORP // VERSION 7.1.4</p>
-  </footer>
+    <footer class="sys-footer">
+        TIMELOOP THRILL CORP // UNIFIED TRADING PROTOCOL // © 2026
+    </footer>
 
 </body>
 </html>
